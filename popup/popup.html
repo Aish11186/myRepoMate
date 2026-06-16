@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GitBuddy Popup</title>
+  <style>
+    :root {
+      --bg-dark: #0d1117;
+      --bg-card: #161b22;
+      --border-card: #30363d;
+      --text-main: #c9d1d9;
+      --text-muted: #8b949e;
+      --primary: #ffffff;
+      --primary-hover: #f3f4f6;
+      --success: #ffffff;
+      --error: #8b949e;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      width: 320px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      color: var(--text-main);
+      padding: 1.2rem;
+      border: 1px solid var(--border-card);
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--border-card);
+      padding-bottom: 0.8rem;
+    }
+
+    .logo {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: #ffffff;
+      letter-spacing: -0.5px;
+    }
+
+    .status-indicator {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.75rem;
+      font-weight: 500;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: var(--error);
+      border: 1px solid var(--border-card);
+    }
+
+    .dot.connected {
+      background-color: #ffffff;
+    }
+
+    .profile-card {
+      background: rgba(255, 255, 255, 0.01);
+      border: 1px solid var(--border-card);
+      border-radius: 8px;
+      padding: 0.8rem 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .profile-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.85rem;
+    }
+
+    .profile-label {
+      color: var(--text-muted);
+    }
+
+    .profile-val {
+      font-weight: 600;
+    }
+
+    .badge {
+      padding: 0.15rem 0.5rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      background: rgba(255, 255, 255, 0.04);
+      color: #ffffff;
+      border: 1px solid var(--border-card);
+    }
+
+    .badge.beginner {
+      border-color: var(--border-card);
+    }
+
+    .badge.advanced {
+      border-color: #8b949e;
+    }
+
+    .tech-list {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 180px;
+      text-align: right;
+    }
+
+    .instruction {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+      border: 1px dashed var(--border-card);
+      border-radius: 6px;
+      padding: 0.6rem;
+      text-align: center;
+    }
+
+    button.btn {
+      width: 100%;
+      font-size: 0.95rem;
+      font-weight: 600;
+      padding: 0.75rem;
+      border-radius: 8px;
+      border: 1px solid #ffffff;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      transition: all 0.2s ease;
+      background: #ffffff;
+      color: #000000;
+    }
+
+    button.btn:hover {
+      background: var(--primary-hover);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <span class="logo">GitBuddy</span>
+      <div class="status-indicator">
+        <span class="dot" id="apiDot"></span>
+        <span id="apiStatusText">Setup Required</span>
+      </div>
+    </header>
+
+    <div class="profile-card">
+      <div class="profile-item">
+        <span class="profile-label">Experience Level</span>
+        <span class="profile-val badge" id="skillBadge">Beginner</span>
+      </div>
+      <div class="profile-item" style="margin-top: 0.25rem;">
+        <span class="profile-label">Tech Stack</span>
+        <span class="profile-val tech-list" id="techList">None selected</span>
+      </div>
+    </div>
+
+    <div class="instruction">
+      Visit any GitHub repository, and click the compass button on the screen to view your personalized walkthrough.
+    </div>
+
+    <button type="button" class="btn" id="btnOptions">
+      Open Dashboard
+    </button>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

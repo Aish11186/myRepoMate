@@ -1,0 +1,430 @@
+/* Reset container styles to avoid page conflicts */
+#gitbuddy-fab, #gitbuddy-sidebar {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  box-sizing: border-box;
+  z-index: 999999 !important; /* Always on top */
+}
+
+#gitbuddy-fab *, #gitbuddy-sidebar * {
+  box-sizing: border-box;
+}
+
+/* Floating Action Button (FAB) */
+#gitbuddy-fab {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 50px;
+  height: 50px;
+  background-color: #000000;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  transition: all 0.2s ease;
+  border: 1px solid #ffffff;
+}
+
+#gitbuddy-fab:hover {
+  background-color: #ffffff;
+}
+
+#gitbuddy-fab:hover span {
+  color: #000000 !important;
+}
+
+#gitbuddy-fab.active {
+  background-color: #000000;
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+#gitbuddy-fab span {
+  transition: all 0.2s ease;
+}
+
+/* Sidebar Container */
+#gitbuddy-sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 400px;
+  height: 100vh;
+  background-color: #0d1117; /* Flat GitHub Dark */
+  border-left: 1px solid #30363d;
+  box-shadow: -8px 0 24px rgba(0, 0, 0, 0.6);
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+#gitbuddy-sidebar.open {
+  transform: translateX(0);
+}
+
+/* Sidebar Header */
+.gitbuddy-header {
+  padding: 1.25rem;
+  border-bottom: 1px solid #30363d;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0d1117;
+}
+
+.gitbuddy-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.3px;
+}
+
+.gitbuddy-subtitle {
+  font-size: 0.75rem;
+  color: #8b949e;
+  margin-top: 0.15rem;
+  font-weight: 500;
+}
+
+.gitbuddy-close {
+  background: none;
+  border: none;
+  color: #8b949e;
+  font-size: 1.5rem;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0.2rem;
+  transition: color 0.1s ease;
+}
+
+.gitbuddy-close:hover {
+  color: #ffffff;
+}
+
+/* Tabs */
+.gitbuddy-tabs {
+  display: flex;
+  border-bottom: 1px solid #30363d;
+  background-color: #161b22;
+}
+
+.gitbuddy-tab {
+  flex: 1;
+  padding: 0.85rem 0;
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #8b949e;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  border-bottom: 2px solid transparent;
+}
+
+.gitbuddy-tab:hover {
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+.gitbuddy-tab.active {
+  color: #ffffff;
+  border-bottom-color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.04);
+}
+
+/* Content Area */
+.gitbuddy-content-area {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  background-color: #0d1117;
+}
+
+/* Custom Scrollbar */
+.gitbuddy-content-area::-webkit-scrollbar {
+  width: 5px;
+}
+
+.gitbuddy-content-area::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.gitbuddy-content-area::-webkit-scrollbar-thumb {
+  background: #30363d;
+  border-radius: 3px;
+}
+
+.gitbuddy-content-area::-webkit-scrollbar-thumb:hover {
+  background: #8b949e;
+}
+
+/* Loading Spinner */
+.gitbuddy-loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  gap: 0.75rem;
+}
+
+.gitbuddy-spinner {
+  width: 30px;
+  height: 30px;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+.gitbuddy-loading-text {
+  color: #8b949e;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Markdown Rendering */
+.gitbuddy-markdown-rendered {
+  color: #c9d1d9;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.gitbuddy-markdown-rendered br {
+  content: "";
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+.gitbuddy-h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid #30363d;
+  padding-bottom: 0.2rem;
+}
+
+.gitbuddy-markdown-rendered ul, .gitbuddy-markdown-rendered ol {
+  margin-bottom: 0.75rem;
+  padding-left: 1.2rem;
+}
+
+.gitbuddy-li, .gitbuddy-ol-li {
+  margin-bottom: 0.3rem;
+}
+
+/* Code Blocks */
+.gitbuddy-code-wrapper {
+  background-color: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  margin: 0.85rem 0;
+  overflow: hidden;
+}
+
+.gitbuddy-code-header {
+  background-color: rgba(255, 255, 255, 0.02);
+  padding: 0.35rem 0.75rem;
+  font-size: 0.7rem;
+  color: #8b949e;
+  border-bottom: 1px solid #30363d;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.gitbuddy-code-wrapper pre {
+  margin: 0;
+  padding: 0.75rem;
+  overflow-x: auto;
+}
+
+.gitbuddy-code-wrapper code {
+  font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
+  font-size: 0.8rem;
+  color: #c9d1d9;
+}
+
+.gitbuddy-inline-code {
+  font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
+  font-size: 0.8rem;
+  background-color: rgba(255, 255, 255, 0.08);
+  padding: 0.1rem 0.3rem;
+  border-radius: 3px;
+  color: #ffffff;
+}
+
+/* Error States */
+.gitbuddy-error-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1.5rem 1rem;
+  background-color: rgba(255, 255, 255, 0.02);
+  border: 1px dashed #30363d;
+  border-radius: 8px;
+}
+
+.gitbuddy-error-title {
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 1rem;
+  margin-bottom: 0.4rem;
+}
+
+.gitbuddy-error-desc {
+  color: #8b949e;
+  font-size: 0.8rem;
+  line-height: 1.4;
+}
+
+.gitbuddy-error-btn {
+  background-color: #ffffff;
+  color: #000000;
+  border: 1px solid #ffffff;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: 0.75rem;
+}
+
+.gitbuddy-error-btn:hover {
+  background-color: #e5e7eb;
+}
+
+/* CTA Welcome Panel */
+.gitbuddy-welcome-ai {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex: 1;
+  padding: 1.5rem 1rem;
+}
+
+.gitbuddy-welcome-ai h3 {
+  color: #ffffff;
+}
+
+.gitbuddy-welcome-ai p {
+  color: #8b949e;
+}
+
+/* AI Action Button */
+.gitbuddy-ai-btn {
+  background-color: #ffffff;
+  color: #000000;
+  border: 1px solid #ffffff;
+  padding: 0.65rem 1.25rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: 100%;
+}
+
+.gitbuddy-ai-btn:hover {
+  background-color: #e5e7eb;
+}
+
+.gitbuddy-ai-btn:active {
+  transform: translateY(0);
+}
+
+.gitbuddy-ai-prompt-box {
+  background-color: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 10px;
+  padding: 1.15rem;
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.gitbuddy-ai-prompt-box.success {
+  border-color: #30363d;
+}
+
+.gitbuddy-ai-prompt-box h4 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin: 0 0 0.35rem 0;
+  color: #ffffff;
+}
+
+.gitbuddy-ai-prompt-box p {
+  font-size: 0.75rem;
+  color: #8b949e;
+  line-height: 1.4;
+  margin: 0 0 0.85rem 0;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Match Badge & Tech Tags styling */
+.gitbuddy-match-badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border: 1px solid #30363d;
+}
+
+.gitbuddy-match-badge.low-match {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #8b949e;
+  border-color: #30363d;
+}
+
+.gitbuddy-match-badge.mid-match {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border-color: #8b949e;
+}
+
+.gitbuddy-match-badge.high-match {
+  background-color: #ffffff;
+  color: #000000;
+  border-color: #ffffff;
+}
+
+.gitbuddy-tech-tag {
+  background-color: #161b22;
+  border: 1px solid #30363d;
+  color: #c9d1d9;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  display: inline-block;
+  margin-bottom: 0.25rem;
+}
+
+.gitbuddy-tech-tag.match {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: #ffffff;
+  color: #ffffff;
+}
+
+.gitbuddy-tech-tag.opp {
+  background-color: rgba(255, 255, 255, 0.02);
+  border-color: #30363d;
+  color: #8b949e;
+}
