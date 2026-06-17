@@ -51,9 +51,9 @@
   right: 0;
   width: 400px;
   height: 100vh;
-  background-color: #0d1117; /* Flat GitHub Dark */
-  border-left: 1px solid #30363d;
-  box-shadow: -8px 0 24px rgba(0, 0, 0, 0.6);
+  background-color: #000000;
+  border-left: 1px solid #333333;
+  box-shadow: -4px 0 12px rgba(0, 0, 0, 0.5);
   transform: translateX(100%);
   transition: transform 0.3s ease;
   display: flex;
@@ -67,11 +67,11 @@
 /* Sidebar Header */
 .gitbuddy-header {
   padding: 1.25rem;
-  border-bottom: 1px solid #30363d;
+  border-bottom: 1px solid #333333;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #0d1117;
+  background-color: #000000;
 }
 
 .gitbuddy-title {
@@ -83,7 +83,7 @@
 
 .gitbuddy-subtitle {
   font-size: 0.75rem;
-  color: #8b949e;
+  color: #888888;
   margin-top: 0.15rem;
   font-weight: 500;
 }
@@ -91,7 +91,7 @@
 .gitbuddy-close {
   background: none;
   border: none;
-  color: #8b949e;
+  color: #888888;
   font-size: 1.5rem;
   cursor: pointer;
   line-height: 1;
@@ -106,8 +106,8 @@
 /* Tabs */
 .gitbuddy-tabs {
   display: flex;
-  border-bottom: 1px solid #30363d;
-  background-color: #161b22;
+  border-bottom: 1px solid #333333;
+  background-color: #000000;
 }
 
 .gitbuddy-tab {
@@ -116,7 +116,7 @@
   text-align: center;
   font-size: 0.8rem;
   font-weight: 600;
-  color: #8b949e;
+  color: #888888;
   cursor: pointer;
   transition: all 0.15s ease;
   border-bottom: 2px solid transparent;
@@ -124,13 +124,11 @@
 
 .gitbuddy-tab:hover {
   color: #ffffff;
-  background-color: rgba(255, 255, 255, 0.02);
 }
 
 .gitbuddy-tab.active {
   color: #ffffff;
   border-bottom-color: #ffffff;
-  background-color: rgba(255, 255, 255, 0.04);
 }
 
 /* Content Area */
@@ -140,7 +138,7 @@
   padding: 1.25rem;
   display: flex;
   flex-direction: column;
-  background-color: #0d1117;
+  background-color: #000000;
 }
 
 /* Custom Scrollbar */
@@ -153,12 +151,12 @@
 }
 
 .gitbuddy-content-area::-webkit-scrollbar-thumb {
-  background: #30363d;
+  background: #333333;
   border-radius: 3px;
 }
 
 .gitbuddy-content-area::-webkit-scrollbar-thumb:hover {
-  background: #8b949e;
+  background: #888888;
 }
 
 /* Loading Spinner */
@@ -181,7 +179,7 @@
 }
 
 .gitbuddy-loading-text {
-  color: #8b949e;
+  color: #888888;
   font-size: 0.85rem;
   font-weight: 500;
 }
@@ -192,7 +190,7 @@
 
 /* Markdown Rendering */
 .gitbuddy-markdown-rendered {
-  color: #c9d1d9;
+  color: #ffffff;
   font-size: 0.9rem;
   line-height: 1.5;
 }
@@ -209,7 +207,7 @@
   color: #ffffff;
   margin-top: 1.25rem;
   margin-bottom: 0.5rem;
-  border-bottom: 1px solid #30363d;
+  border-bottom: 1px solid #333333;
   padding-bottom: 0.2rem;
 }
 
@@ -224,19 +222,19 @@
 
 /* Code Blocks */
 .gitbuddy-code-wrapper {
-  background-color: #161b22;
-  border: 1px solid #30363d;
-  border-radius: 6px;
+  background-color: #000000;
+  border: 1px solid #333333;
+  border-radius: 0;
   margin: 0.85rem 0;
   overflow: hidden;
 }
 
 .gitbuddy-code-header {
-  background-color: rgba(255, 255, 255, 0.02);
+  background-color: #000000;
   padding: 0.35rem 0.75rem;
   font-size: 0.7rem;
-  color: #8b949e;
-  border-bottom: 1px solid #30363d;
+  color: #888888;
+  border-bottom: 1px solid #333333;
   text-transform: uppercase;
   font-weight: 600;
   letter-spacing: 0.5px;
@@ -251,15 +249,16 @@
 .gitbuddy-code-wrapper code {
   font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
   font-size: 0.8rem;
-  color: #c9d1d9;
+  color: #ffffff;
 }
 
 .gitbuddy-inline-code {
   font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
   font-size: 0.8rem;
-  background-color: rgba(255, 255, 255, 0.08);
+  background-color: #000000;
+  border: 1px solid #333333;
   padding: 0.1rem 0.3rem;
-  border-radius: 3px;
+  border-radius: 0;
   color: #ffffff;
 }
 
@@ -270,9 +269,9 @@
   align-items: center;
   text-align: center;
   padding: 1.5rem 1rem;
-  background-color: rgba(255, 255, 255, 0.02);
-  border: 1px dashed #30363d;
-  border-radius: 8px;
+  background-color: #000000;
+  border: 1px dashed #333333;
+  border-radius: 0;
 }
 
 .gitbuddy-error-title {
@@ -283,7 +282,7 @@
 }
 
 .gitbuddy-error-desc {
-  color: #8b949e;
+  color: #888888;
   font-size: 0.8rem;
   line-height: 1.4;
 }
@@ -321,7 +320,7 @@
 }
 
 .gitbuddy-welcome-ai p {
-  color: #8b949e;
+  color: #888888;
 }
 
 /* AI Action Button */
@@ -347,16 +346,16 @@
 }
 
 .gitbuddy-ai-prompt-box {
-  background-color: #161b22;
-  border: 1px solid #30363d;
-  border-radius: 10px;
+  background-color: #000000;
+  border: 1px solid #333333;
+  border-radius: 0;
   padding: 1.15rem;
   margin-top: 1.5rem;
   text-align: center;
 }
 
 .gitbuddy-ai-prompt-box.success {
-  border-color: #30363d;
+  border-color: #333333;
 }
 
 .gitbuddy-ai-prompt-box h4 {
@@ -368,7 +367,7 @@
 
 .gitbuddy-ai-prompt-box p {
   font-size: 0.75rem;
-  color: #8b949e;
+  color: #888888;
   line-height: 1.4;
   margin: 0 0 0.85rem 0;
 }
@@ -384,19 +383,19 @@
   border-radius: 4px;
   font-size: 0.75rem;
   font-weight: 600;
-  border: 1px solid #30363d;
+  border: 1px solid #333333;
 }
 
 .gitbuddy-match-badge.low-match {
-  background-color: rgba(255, 255, 255, 0.05);
-  color: #8b949e;
-  border-color: #30363d;
+  background-color: #000000;
+  color: #888888;
+  border-color: #333333;
 }
 
 .gitbuddy-match-badge.mid-match {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: #000000;
   color: #ffffff;
-  border-color: #8b949e;
+  border-color: #888888;
 }
 
 .gitbuddy-match-badge.high-match {
@@ -406,11 +405,11 @@
 }
 
 .gitbuddy-tech-tag {
-  background-color: #161b22;
-  border: 1px solid #30363d;
-  color: #c9d1d9;
+  background-color: #000000;
+  border: 1px solid #333333;
+  color: #ffffff;
   padding: 0.3rem 0.6rem;
-  border-radius: 4px;
+  border-radius: 0;
   font-size: 0.75rem;
   font-weight: 500;
   display: inline-block;
@@ -418,13 +417,13 @@
 }
 
 .gitbuddy-tech-tag.match {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: #ffffff;
   border-color: #ffffff;
-  color: #ffffff;
+  color: #000000;
 }
 
 .gitbuddy-tech-tag.opp {
-  background-color: rgba(255, 255, 255, 0.02);
-  border-color: #30363d;
-  color: #8b949e;
+  background-color: #000000;
+  border-color: #333333;
+  color: #888888;
 }

@@ -390,7 +390,7 @@
         contentArea.innerHTML = `
           <div class="gitbuddy-loading-container">
             <div class="gitbuddy-spinner"></div>
-            <div class="gitbuddy-loading-text">Consulting Gemini AI...</div>
+            <div class="gitbuddy-loading-text">Preparing... (This may take upto 30 seconds)</div>
             <div style="font-size: 0.75rem; color: #8b949e; text-align: center; max-width: 280px; margin-top: -0.5rem;">Analyzing file structures and configuration formats. This will take up to 10 seconds.</div>
           </div>
         `;
@@ -402,7 +402,7 @@
           <div class="gitbuddy-welcome-ai">
             <h3 style="font-size: 1.15rem; font-weight: 700; margin-bottom: 0.5rem; color: #ffffff;">Generate Codebase Walkthrough</h3>
             <p style="font-size: 0.8rem; color: #8b949e; line-height: 1.5; margin-bottom: 1.5rem; max-width: 285px; margin-left: auto; margin-right: auto;">
-              Send repository files and README summary to the Gemini API to construct a personalized codebase map and setup guide.
+              Send repository files and README summary to the API to construct a personalized codebase map and setup guide.
             </p>
             <button class="gitbuddy-ai-btn" id="btn-trigger-ai-tab">Generate AI Onboarding Tour</button>
           </div>
