@@ -5,11 +5,13 @@ Clone the repo to run locally <br>
 
 
 
-To run this project:
+To run this project:<br>
 
-**Platform:** 
-Any Chromium-based web browser (Google Chrome, Brave, Microsoft Edge, etc.).
-**Setup:**
+**Platform:** <br>
+Any Chromium-based web browser (Google Chrome, Brave, Microsoft Edge, etc.).<br>
+
+
+**Setup:**<br>
 Go to chrome://extensions/ in your browser.
 Enable Developer mode (top right toggle).
 Click Load unpacked (top left button) and select the myRepoMate folder.
