@@ -12,6 +12,7 @@ Any Chromium-based web browser (Google Chrome, Brave, Microsoft Edge, etc.).<br>
 
 
 **Setup:**<br>
-Go to chrome://extensions/ in your browser.
-Enable Developer mode (top right toggle).
-Click Load unpacked (top left button) and select the myRepoMate folder.
+Clone this repo <br>
+Go to chrome://extensions/ in your browser. <br>
+Enable Developer mode (top right toggle).<br>
+Click Load unpacked (top left button) and select the myRepoMate folder.<br>
